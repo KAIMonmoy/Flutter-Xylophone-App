@@ -15,20 +15,16 @@ class XylophoneApp extends StatelessWidget {
 class Xylophone extends StatelessWidget {
   final audioPlayer = AudioCache();
 
-  void playNote(int noteId) {
-    audioPlayer.play('note$noteId.wav');
-  }
+  void playNote(int noteId) => audioPlayer.play('note$noteId.wav');
 
-  Widget buildKey({Color keyColor, int noteId}) {
-    return Expanded(
-      child: FlatButton(
-          color: keyColor,
-          onPressed: () {
-            playNote(noteId);
-          },
-          child: null),
-    );
-  }
+  Widget buildKey({Color keyColor, int noteId}) => Expanded(
+        child: FlatButton(
+            color: keyColor,
+            onPressed: () {
+              playNote(noteId);
+            },
+            child: null),
+      );
 
   @override
   Widget build(BuildContext context) {
